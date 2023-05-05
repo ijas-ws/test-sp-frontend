@@ -65,4 +65,5 @@ jobs:
       - name: Invalidate CloudFront
         uses: chetan/invalidate-cloudfront-action@master
         env:
+          DEBUG: "1"
           DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
