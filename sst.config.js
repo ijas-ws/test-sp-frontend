@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { FrontNextJsWeb } from "./stacks/FrontNextJsWeb";
+import { BackNodeHapiPg } from "./stacks/BackNodeHapiPg";
 
 dotenv.config({ path: ".env" });
 
@@ -12,6 +12,6 @@ export default {
 	},
 	stacks(app) {
 		// deploy stacks
-		app.stack(FrontNextJsWeb);
+		app.stack(BackNodeHapiPg);
 	},
 };
