@@ -81,7 +81,7 @@ exports[`<Repos /> container tests should render and match the snapshot 1`] = `
             class="emotion-3"
             data-testid="text"
           >
-            YOU are awesome
+            You are super
           </span>
         </a>
       </div>
