@@ -9,7 +9,6 @@ on:
       - qa
       - master
     paths: "back-node-hapi-pg/**"
-
     workflow_dispatch:
 
 jobs:
@@ -17,7 +16,7 @@ jobs:
     name: Docker build image and push
     runs-on: ubuntu-latest
     defaults:
-      run: 
+      run:
         working-directory: ./back-node-hapi-pg
     strategy:
       matrix:
