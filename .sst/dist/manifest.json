@@ -1,0 +1,227 @@
+{
+  "version": "31.0.0",
+  "artifacts": {
+    "dev-web-app-FrontNextJsWeb.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "dev-web-app-FrontNextJsWeb.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "dev-web-app-FrontNextJsWeb": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://511522223657/ap-south-1",
+      "properties": {
+        "templateFile": "dev-web-app-FrontNextJsWeb.template.json",
+        "tags": {
+          "sst:app": "web-app",
+          "sst:stage": "dev"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::511522223657:role/cdk-hnb659fds-deploy-role-511522223657-ap-south-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::511522223657:role/cdk-hnb659fds-cfn-exec-role-511522223657-ap-south-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-511522223657-ap-south-1/47f1c30e2e17ef13279db6363896f79fd54f8c94647f02f549b58d3956d386c1.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "dev-web-app-FrontNextJsWeb.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::511522223657:role/cdk-hnb659fds-lookup-role-511522223657-ap-south-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "dev-web-app-FrontNextJsWeb.assets"
+      ],
+      "metadata": {
+        "/dev-web-app-FrontNextJsWeb": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "sst:app",
+                "Value": "web-app"
+              },
+              {
+                "Key": "sst:stage",
+                "Value": "dev"
+              }
+            ]
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/CustomResourceHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomResourceHandlerServiceRole41AEC181"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/CustomResourceHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomResourceHandlerE8FB56BA"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteAwsCliLayer69D5153B"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/S3Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteS3Bucket9F294135"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/S3Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteS3BucketPolicyCCA251B9"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/S3Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteS3BucketAutoDeleteObjectsCustomResourceADAA50C6"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/S3Uploader/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteS3UploaderServiceRole453BE5B4"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/S3Uploader/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteS3UploaderServiceRoleDefaultPolicy7C3F21DE"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/S3Uploader/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteS3UploaderE3577C28"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/S3Handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteS3HandlerServiceRoleB21FB26B"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/S3Handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteS3HandlerServiceRoleDefaultPolicy4CE32E3B"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/S3Handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteS3Handler8B411B62"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/S3Deployment/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteS3DeploymentEE87D540"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/CloudFrontFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteCloudFrontFunction6B1474EC"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/Distribution/Origin1/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteDistributionOrigin1S3Origin3D5A6B5F"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/Distribution/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteDistribution375957A5"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/CloudFrontInvalidatorPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteCloudFrontInvalidatorPolicy8C30BF67"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/CloudFrontInvalidator/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteCloudFrontInvalidator94668B60"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/FrontNextJsWebSite/Parameter_url/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FrontNextJsWebSiteParameterurlA962D3B2"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/SSTStackOutputsiteUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteUrl"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/SSTStackOutputdistributionId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "distributionId"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/SSTStackOutputbucketName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "bucketName"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/SSTStackOutputSSTMetadata": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SSTMetadata"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/dev-web-app-FrontNextJsWeb/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "dev-web-app-FrontNextJsWeb"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
