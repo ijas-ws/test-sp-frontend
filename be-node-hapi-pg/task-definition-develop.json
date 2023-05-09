@@ -39,12 +39,7 @@
       "dnsServers": null,
       "mountPoints": [],
       "workingDirectory": null,
-      "secrets": [
-        {
-          "name": "POSTGRES_PASSWORD",
-          "valueFrom": "arn:aws:secretsmanager:ap-south-1:511522223657:secret:be-database-credentials-dev-ml8toK:password::"
-        }
-      ],
+      "secrets": null,
       "dockerSecurityOptions": null,
       "memory": null,
       "memoryReservation": null,
