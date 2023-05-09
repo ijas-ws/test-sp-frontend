@@ -5,7 +5,7 @@ name: CD be-node-hapi-pg - development
 on:
   push:
     branches:
-      - dev
+      - develop
       - qa
       - main
     paths: "main/**"
