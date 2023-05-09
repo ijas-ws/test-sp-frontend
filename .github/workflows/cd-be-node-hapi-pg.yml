@@ -8,7 +8,7 @@ on:
       - develop
       - qa
       - main
-    paths: "main/**"
+    paths: "be-node-hapi-pg/**"
 
   workflow_dispatch:
 
@@ -40,7 +40,7 @@ jobs:
       - name: Set environment name
         id: environment
         run: |
-          if [[ ${{ steps.vars.outputs.short_ref }} == be-node-hapi-pg ]]; then
+          if [[ ${{ steps.vars.outputs.short_ref }} == main ]]; then
                echo ::set-output name=environment_name::prod
           elif [[ ${{ steps.vars.outputs.short_ref }} == qa ]]; then
                echo ::set-output name=environment_name::qa
