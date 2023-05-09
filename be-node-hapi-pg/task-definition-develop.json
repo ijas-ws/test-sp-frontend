@@ -27,11 +27,11 @@
       "environment": [
         {
           "name": "BUILD_NAME",
-          "value": ""
+          "value": "develop"
         },
         {
           "name": "ENVIRONMENT_NAME",
-          "value": ".develop"
+          "value": "dev"
         }
       ],
       "resourceRequirements": null,
@@ -46,7 +46,7 @@
         }
       ],
       "dockerSecurityOptions": null,
-      "memory": null,
+      "memory": 1024,
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
@@ -128,5 +128,15 @@
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
-  "volumes": []
+  "volumes": [],
+  "tags": [
+    {
+      "key": "sst:app",
+      "value": "web-app"
+    },
+    {
+      "key": "sst:stage",
+      "value": "dev"
+    }
+  ]
 }
