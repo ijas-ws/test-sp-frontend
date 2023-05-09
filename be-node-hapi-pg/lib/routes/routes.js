@@ -8,9 +8,7 @@ export default [
     handler: (request, h) => {
       const message = 'Health check up and running!';
       logger().info(message);
-      return h.response({
-        data: 'Hapi template at your service - SP',
-      });
+      return h.response({ data: 'Hapi template on SP' });
     },
     options: {
       description: 'this is the health check api',

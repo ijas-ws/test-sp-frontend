@@ -1,6 +1,6 @@
 version: '3'
 services:
-  back_node_hapi_pg_db:
+  be_node_hapi_pg_db:
     image: postgres:15
     ports:
       - 5432:5432
@@ -21,7 +21,7 @@ services:
         ENVIRONMENT_NAME: docker
     depends_on:
       - redis
-      - back_node_hapi_pg_db
+      - be_node_hapi_pg_db
     restart: always
     ports:
       - 9000:9000

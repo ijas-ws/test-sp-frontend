@@ -1,14 +1,15 @@
-# CD pipeline for back-node-hapi-pg for development branch
+# CD pipeline for be-node-hapi-pg for development branch
 
-name: CD back-node-hapi-pg - development
+name: CD be-node-hapi-pg - development
 
 on:
   push:
     branches:
-      - develop
+      - dev
       - qa
-      - master
-    paths: "back-node-hapi-pg/**"
+      - main
+    paths: "main/**"
+
   workflow_dispatch:
 
 jobs:
@@ -17,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./back-node-hapi-pg
+        working-directory: ./be-node-hapi-pg
     strategy:
       matrix:
         node-version: [16.14.x]
@@ -39,12 +40,12 @@ jobs:
       - name: Set environment name
         id: environment
         run: |
-          if [[ ${{ steps.vars.outputs.short_ref }} == master ]]; then
-               echo ::set-output name=environment_name::production
+          if [[ ${{ steps.vars.outputs.short_ref }} == be-node-hapi-pg ]]; then
+               echo ::set-output name=environment_name::prod
           elif [[ ${{ steps.vars.outputs.short_ref }} == qa ]]; then
                echo ::set-output name=environment_name::qa
           else
-               echo ::set-output name=environment_name::development
+               echo ::set-output name=environment_name::dev
           fi
 
       # Configure AWS with credentials
@@ -74,20 +75,20 @@ jobs:
 
       # Create and configure Amazon ECS task definition
       - name: Render Amazon ECS task definition
-        id: back-container
+        id: be-container
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: back-node-hapi-pg/task-definition-${{ steps.vars.outputs.short_ref }}.json
-          container-name: back-container-${{ steps.vars.outputs.short_ref }}
+          task-definition: be-node-hapi-pg/task-definition-${{ steps.vars.outputs.short_ref }}.json
+          container-name: be-container-${{ steps.vars.outputs.short_ref }}
           image: ${{ steps.login-ecr.outputs.registry }}/${{ secrets.AWS_ECR_REPOSITORY }}:${{ github.sha }}
 
       # Deploy to Amazon ECS
       - name: Deploy to Amazon ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: ${{ steps.back-container.outputs.task-definition }}
-          service: back-service-${{ steps.vars.outputs.short_ref }}
-          cluster: back-cluster-${{ steps.vars.outputs.short_ref }}
+          task-definition: ${{ steps.be-container.outputs.task-definition }}
+          service: be-service-${{ steps.vars.outputs.short_ref }}
+          cluster: be-cluster-${{ steps.vars.outputs.short_ref }}
 
       # Logout of Amazon
       - name: Logout of Amazon ECR

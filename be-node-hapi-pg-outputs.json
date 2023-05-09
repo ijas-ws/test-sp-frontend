@@ -1,0 +1,27 @@
+{
+	"dev": {
+    "image": "511522223657.dkr.ecr.ap-south-1.amazonaws.com/cdk-hnb659fds-container-assets-511522223657-ap-south-1:d8471f14046c1511091d6013c95cdf922c0d1571ff8cec17da28b497220adb7c",
+    "family": "be-task-definition-dev",
+    "taskRole": "arn:aws:iam::511522223657:role/be-task-role-dev",
+    "executionRole": "arn:aws:iam::511522223657:role/be-ecs-execution-role-dev",
+    "databaseName": "be_database_dev",
+    "databaseHost": "dev-web-app-benodehapipg-bedatabaseinstancedev07ad-uzrmduyyw4fs.cvnyo3tm4lck.ap-south-1.rds.amazonaws.com",
+		"redisHost": "be-redis-cluster-dev.9txi6w.0001.aps1.cache.amazonaws.com",
+    "awsRegion": "ap-south-1",
+    "secretName": "be-database-credentials-dev",
+    "secretArn": "arn:aws:secretsmanager:ap-south-1:511522223657:secret:be-database-credentials-dev-ml8toK",
+    "loadBalancerDns": "be-elb-dev-140681949.ap-south-1.elb.amazonaws.com",
+    "serviceName": "be-service-dev",
+    "containerPort": "9000",
+    "containerName": "be-container-dev",
+    "clusterName": "be-cluster-dev",
+    "taskDefinition": "arn:aws:ecs:ap-south-1:511522223657:task-definition/be-task-definition-dev:2",
+    "elasticContainerRegistryRepo": "cdk-hnb659fds-container-assets-511522223657-ap-south-1",
+    "logDriver": "awslogs",
+		"logDriverOptions": {
+      "awslogs-group": "dev-web-app-BeNodeHapiPg-betaskdevbecontainerdevLogGroup7B35E16F-GWDiHuDWFtlx",
+      "awslogs-stream-prefix": "be-log-group-dev",
+      "awslogs-region": "ap-south-1"
+    }
+	}
+}

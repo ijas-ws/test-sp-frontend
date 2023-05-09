@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": "arn:aws:iam::511522223657:role/back-ecs-execution-role-develop",
+  "executionRoleArn": "arn:aws:iam::511522223657:role/be-ecs-execution-role-dev",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -8,8 +8,8 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "dev-web-app-BackNodeHapiPg-backtaskdevelopbackcontainerdevelopLogGroupDEA68257-v0G8XwRA6xKf",
-          "awslogs-stream-prefix": "back-log-group-develop",
+          "awslogs-group": "dev-web-app-BeNodeHapiPg-betaskdevbecontainerdevLogGroup7B35E16F-GWDiHuDWFtlx",
+          "awslogs-stream-prefix": "be-log-group-dev",
           "awslogs-region": "ap-south-1"
         }
       },
@@ -39,7 +39,12 @@
       "dnsServers": null,
       "mountPoints": [],
       "workingDirectory": null,
-      "secrets": null,
+      "secrets": [
+        {
+          "name": "POSTGRES_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:ap-south-1:511522223657:secret:be-database-credentials-dev-ml8toK:password::"
+        }
+      ],
       "dockerSecurityOptions": null,
       "memory": null,
       "memoryReservation": null,
@@ -61,16 +66,16 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "image": "511522223657.dkr.ecr.ap-south-1.amazonaws.com/cdk-hnb659fds-container-assets-511522223657-ap-south-1:250940e4feb96a28cb7d7083fec3d708e247d3ce2a917cdb910f2d1306d7c771",
-      "name": "back-container-develop"
+      "image": "511522223657.dkr.ecr.ap-south-1.amazonaws.com/cdk-hnb659fds-container-assets-511522223657-ap-south-1:d8471f14046c1511091d6013c95cdf922c0d1571ff8cec17da28b497220adb7c",
+      "name": "be-container-dev"
     }
   ],
   "placementConstraints": [],
   "memory": "2048",
-  "taskRoleArn": "arn:aws:iam::511522223657:role/back-task-role-develop",
+  "taskRoleArn": "arn:aws:iam::511522223657:role/be-task-role-dev",
   "compatibilities": ["EC2", "FARGATE"],
-  "taskDefinitionArn": "",
-  "family": "back-task-definition-develop",
+  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:511522223657:task-definition/be-task-definition-dev:2",
+  "family": "be-task-definition-dev",
   "requiresAttributes": [
     {
       "targetId": null,

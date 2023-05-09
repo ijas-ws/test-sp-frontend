@@ -1,14 +1,14 @@
-name: CI back-node-hapi-pg
+name: CI be-node-hapi-pg
 on:
   push:
     branches:
-      - master
-      - develop
+      - main
+      - dev
       - qa
-    paths: "back-node-hapi-pg/**"
+    paths: "be-node-hapi-pg/**"
 
   pull_request:
-    paths: "back-node-hapi-pg/**"
+    paths: "be-node-hapi-pg/**"
 
   # Allows to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./back-node-hapi-pg
+        working-directory: ./be-node-hapi-pg
     strategy:
       matrix:
         node-version: [16.14.x]
@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
-          cache-dependency-path: ./back-node-hapi-pg/package.json
+          cache-dependency-path: ./be-node-hapi-pg/package.json
 
       - name: Install dependencies
         run: yarn
