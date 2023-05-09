@@ -1,6 +1,7 @@
-node_modules/
-back-node-hapi-pg/node_modules/
-.sst/
-build/
-out/
+node_modules
+be-node-hapi-pg/node_modules
+.sst
+outputs.json
 cdk.context.json
+build
+out

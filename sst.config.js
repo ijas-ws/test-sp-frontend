@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { BackNodeHapiPg } from "./stacks/BackNodeHapiPg";
+import { BeNodeHapiPg } from "./stacks/BeNodeHapiPg";
 
 dotenv.config({ path: ".env" });
 
@@ -12,6 +12,6 @@ export default {
 	},
 	stacks(app) {
 		// deploy stacks
-		app.stack(BackNodeHapiPg);
+		app.stack(BeNodeHapiPg);
 	},
 };
