@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - dev
+      - develop
       - qa
     paths: "be-node-hapi-pg/**"
 
