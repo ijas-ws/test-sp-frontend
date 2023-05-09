@@ -79,7 +79,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: be-node-hapi-pg/task-definition-${{ steps.vars.outputs.short_ref }}.json
-          container-name: be-container-${{ steps.vars.outputs.environment_name }}
+          container-name: be-container-${{ steps.environment.outputs.environment_name }}
           image: ${{ steps.login-ecr.outputs.registry }}/${{ secrets.AWS_ECR_REPOSITORY }}:${{ github.sha }}
 
       # Deploy to Amazon ECS
@@ -87,8 +87,8 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.be-container.outputs.task-definition }}
-          service: be-service-${{ steps.vars.outputs.environment_name }}
-          cluster: be-cluster-${{ steps.vars.outputs.environment_name }}
+          service: be-service-${{ steps.environment.outputs.environment_name }}
+          cluster: be-cluster-${{ steps.environment.outputs.environment_name }}
 
       # Logout of Amazon
       - name: Logout of Amazon ECR
